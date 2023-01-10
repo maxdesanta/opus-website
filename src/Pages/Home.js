@@ -1,17 +1,15 @@
 import React from "react";
-import Header from "../Components/Header/Header";
 import Box from "@mui/material/Box";
-import ImportantUrgentCard from "../Components/Card/importan-urgent/ImportantUrgentCard";
-import ImportantUrgentAdd from "../Components/Card/importan-urgent/ImportantUrgentAdd";
+import ImportantUrgentCard from "../Components/Card/ImportanUrgent/ImportantUrgentCard";
+import ImportantUrgentDisplay from "../Components/Card/ImportanUrgent/ImportantUrgentDisplay";
 
-export default function Home() {
+export default function Home({children}) {
   return (
-    <div>
-      <Header />
+    <Box>
       <Box sx={{display: 'flex', justifyContent: 'center', gap: 10}}>
         <ImportantUrgentCard />
-        <ImportantUrgentAdd />
+        <ImportantUrgentDisplay />
       </Box>
-    </div>
+    </Box>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
@@ -10,6 +11,9 @@ import AddIcon from "@mui/icons-material/Add";
 import { ReactComponent as People } from "../../../assets/people.svg";
 
 export default function ImportantUrgentCard() {
+  // router
+  const navigate = useNavigate();
+  
   return (
     <Box
       sx={{
@@ -25,13 +29,14 @@ export default function ImportantUrgentCard() {
           pt: 1,
           pb: 2,
           px: 2,
+          height: "auto",
           width: "300px"
         }}
       >
         <CardContent>
-          <Grid container >
+          <Grid container>
             <Grid item>
-              <Typography variant="h6" sx={{ color: "fontColor.main", fontWeight: "600", pb: 5 }}>Important Urgent</Typography>
+              <Typography variant="h6" sx={{ color: "fontColor.main", fontWeight: "600", pb: 1.5 }}>Important Urgent</Typography>
             </Grid>
             <Grid item md={11.5}>
               <Typography sx={{ color: "fontColor.main" }}>Due</Typography>
@@ -39,14 +44,15 @@ export default function ImportantUrgentCard() {
             <Grid item md={0.5}>
               <Typography sx={{ color: "fontColor.main" }}>0</Typography>
             </Grid>
-            <Grid item md={11.5} sx={{ borderBottom: "1px solid #ffffff" }}>
-              <Typography sx={{ color: "fontColor.main" }}>Due date</Typography>
+            <Grid item md={11.5} sx={{ borderBottom: "1px solid #ffffff", pb:1.5 }}>
+              <Typography sx={{ color: "fontColor.main" }}>Overdue</Typography>
             </Grid>
             <Grid item md={0.4}>
               <Typography
                 sx={{
                   color: "fontColor.main",
                   borderBottom: "1px solid #ffffff",
+                  pb:2
                 }}
               >
                 0
@@ -56,7 +62,7 @@ export default function ImportantUrgentCard() {
               <People />
             </Grid>
             <Grid item>
-              <Box sx={{ pl: 4, pb: 12 }}>
+              <Box sx={{ pl: 4, pb: 24 }}>
                 <Typography
                   sx={{ color: "fontColor.main", fontWeight: 600, fontSize: "1.8em" }}
                 >
@@ -73,8 +79,11 @@ export default function ImportantUrgentCard() {
           <Button
             variant="contained"
             fullWidth
+            onClick={() => navigate('/iu/add')}
             startIcon={<AddIcon />}
-            sx={{ color: "card.main1", backgroundColor: "#ffffff" }}
+            sx={{ color: "card.main1", backgroundColor: "#ffffff", "&:hover": {
+              backgroundColor: "#ffffff"
+            }}}
           >
             Add new task
           </Button>
