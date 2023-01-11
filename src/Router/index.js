@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import ImportantUrgentAdd from "../Components/Card/ImportanUrgent/ImportantUrgentAdd";
-import Header from "../Components/Header/Header";
 import MainLayout from "../Components/Layouts/MainLayout";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import ForgotPassword from "../Pages/Forgot";
 
 export default function Router() {
   return (
@@ -15,6 +15,8 @@ export default function Router() {
       </Route>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+      <Route path="forgot" element={<ForgotPassword />} />
+      
     </Routes>
   );
 }

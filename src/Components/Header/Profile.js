@@ -25,6 +25,7 @@ export default function Profile() {
     setAnchor(null);
   };
 
+
   return (
     <Box>
       <Grid container alignItems={"center"}>
@@ -55,9 +56,9 @@ export default function Profile() {
         PaperProps={{
           elevation: 0,
           sx: {
-            overflow: "visible",
+            overflow: "vishoverMenuible",
             filter: "drop-shadow(0px 2px 8px #000000)",
-            mt: 4,
+            mt: 4
           }
         }}
         transformOrigin={{ horizontal: "right", vertical: "top" }}
